@@ -1,17 +1,20 @@
 import React from 'react'
-import { directive } from '@babel/types'
 
 const VideoDetail = ({ video }) => {
-	console.log(video)
 	return (
 		<div>
-			<iframe src={`https://www.youtube.com/embed/${video.id.videoId}`} frameborder='0' />
-			<div className='ui cards'>
-				<div className='content'>
-					<div className='header'>{video.snippet.title}</div>
-					<div className='description'>{video.snippet.description}</div>
-				</div>
-			</div>
+			<div className='ui embed'>
+				<iframe
+					allowFullScreen={true}
+					src={`https://www.youtube.com/embed/${video.id.videoId}`}
+					frameBorder='0'
+					title={video.snippet.title}
+				/>
+			</div>{' '}
+			<div className='content'>
+				<h1 className='header'> {video.snippet.title} </h1>{' '}
+				<p className='description'> {video.snippet.description} </p>{' '}
+			</div>{' '}
 		</div>
 	)
 }
