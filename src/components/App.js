@@ -31,62 +31,37 @@ class App extends React.Component {
 	}
 	render() {
 		if (this.state.selectedVideo) {
-			return ( <
-				div className = 'ui container' >
-				<
-				div style = {
-					{
-						marginBottom: '1rem'
-					}
-				} >
-				<
-				SearchBar submitForm = {
-					this.submitForm
-				}
-				/>{' '} < /
-				div > {
-					' '
-				} <
-				div className = 'ui grid' >
-				<
-				div className = 'row' >
-				<
-				div className = 'eleven wide column' >
-				<
-				VideoDetail video = {
-					this.state.selectedVideo
-				}
-				/>{' '} < /
-				div > {
-					' '
-				} <
-				div className = 'five wide column' >
-				<
-				VideoList videos = {
-					this.state.videos
-				}
-				presentVideo = {
-					this.presentVideo
-				}
-				/>{' '} < /
-				div > {
-					' '
-				} <
-				/div>{' '} < /
-				div > {
-					' '
-				} <
-				/div>
+			return (
+				<div className='ui container'>
+					<div
+						style={{
+							marginBottom: '1rem'
+						}}
+					>
+						<SearchBar submitForm={this.submitForm} /> {' '}
+					</div>{' '}
+					 {' '}
+					<div className='ui grid'>
+						<div className='row'>
+							<div className='eleven wide column'>
+								<VideoDetail video={this.state.selectedVideo} /> {' '}
+							</div>{' '}
+							 {' '}
+							<div className='five wide column'>
+								<VideoList videos={this.state.videos} presentVideo={this.presentVideo} /> {' '}
+							</div>{' '}
+							 {' '}
+						</div>{' '}
+						{' '}
+					</div>{' '}
+					 {' '}
+				</div>
 			)
 		} else {
-			return ( <
-				div className = 'ui container' >
-				<
-				SearchBar submitForm = {
-					this.submitForm
-				}
-				/>{' '} < /
-				div >
+			return (
+				<div className='ui container'>
+					<SearchBar submitForm={this.submitForm} /> {' '}
+				</div>
 			)
 		}
 	}
